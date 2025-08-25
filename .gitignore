@@ -5,6 +5,9 @@ venv/
 data_ingestion/sp500/
 data_ingestion/sp500_tickers_*.csv
 
+# Transformed data files
+transformed/
+
 # Logs
 logs/
 

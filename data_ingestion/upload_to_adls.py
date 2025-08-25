@@ -4,6 +4,10 @@ from azure.storage.blob import BlobServiceClient
 import pandas as pd
 import os
 
+
+load_dotenv()
+connection_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+
 def upload_to_adls(recent_tickers, connect_str, container_name="raw"):
     tickers = pd.read_csv(recent_tickers)['Cleaned'].tolist()
     date_str = recent_tickers.split("_")[-1].replace(".csv", "")
@@ -21,5 +25,4 @@ def upload_to_adls(recent_tickers, connect_str, container_name="raw"):
 
 
 if __name__ == "__main__":
-    load_dotenv()
-    upload_to_adls("sp500_tickers_2025-08-25.csv", os.getenv("AZURE_STORAGE_CONNECTION_STRING"))
+    upload_to_adls("sp500_tickers_2025-08-25.csv", connection_str)

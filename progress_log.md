@@ -9,5 +9,6 @@
 
 ## Day 1
 - Built and validated core ingestion pipeline for S&P 500 equities
-- Deployed raw data to Azure Data Lake
-- Secured pipeline with environment-based secrets
+- Deployed raw and transformed data to ADLS
+- Scaled trasnformation across S&P 500 equities
+- Confirmed reproducibility of ingestion and transformation scripts
