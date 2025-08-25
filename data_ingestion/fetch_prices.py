@@ -21,23 +21,6 @@ def get_sp500_tickers():
             tickers.append(symbol)
     return tickers
 
-'''def get_sp500_tickers():
-    url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.text, 'lxml')
-    table = soup.find('table', {'class': 'wikitable sortable'})
-
-    tickers = []
-    for row in table.find_all('tr')[1:]:
-        cells = row.find_all('td')
-        if len(cells) < 1:
-            continue
-
-        symbol = cells[0].text.strip()
-        tickers.append(symbol)
-    return tickers'''
-
 
 def clean_ticker(tickers):
     cleaned = []
@@ -67,9 +50,7 @@ def download_prices(tickers, start="2020-01-01", end="2023-01-01"):
         try:
             df = download_with_retry(ticker, start, end)
             if not df.empty:
-                df['Ticker'] = ticker
-                df['IngestedDate'] = date_str
-
+                df = df.stack(level='Ticker').reset_index()
 
                 df.to_csv(f"{folder}/{ticker}_prices.csv")
                 print(f"✅ {ticker} downloaded.")
