@@ -6,3 +6,8 @@
 - Built local dev environment and repo structure
 - Wrote ingestion script for AAPL prices
 - Uploaded first dataset to Azure Data Lake
+
+## Day 1
+- Built and validated core ingestion pipeline for S&P 500 equities
+- Deployed raw data to Azure Data Lake
+- Secured pipeline with environment-based secrets
