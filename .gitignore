@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Raw data files
+data_ingestion/sp500/
+data_ingestion/sp500_tickers_*.csv
+
+# Logs
+logs/
+
+# Secrets
+.env
