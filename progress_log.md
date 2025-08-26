@@ -9,6 +9,8 @@
 
 ## Day 1
 - Built and validated core ingestion pipeline for S&P 500 equities
-- Deployed raw and transformed data to ADLS
-- Scaled trasnformation across S&P 500 equities
-- Confirmed reproducibility of ingestion and transformation scripts
+- Deployed raw and transformed sp500 data to ADLS
+- Scaled transformation across S&P 500 equities
+- Calculated daily returns and basic stats
+- Designed and implemented analytics layer with Sharpe ratio, drawdown, and volatility
+- Completed momentum signal backtest across full S&P 500 ticker list

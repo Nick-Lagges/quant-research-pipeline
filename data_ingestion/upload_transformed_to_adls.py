@@ -15,7 +15,7 @@ def upload_transformed(date_str, connect_str, container_name="transformed"):
     current_path = os.path.dirname(__file__)
     parent_dir = os.path.dirname(current_path)
 
-    local_folder = parent_dir + f"/transformed/{date_str}/"
+    local_folder = f"{parent_dir}/transformed/{date_str}/"
 
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 
